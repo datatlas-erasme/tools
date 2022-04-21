@@ -4,3 +4,9 @@ node_modules
 .DS_Store
 bundle.js
 demo/svg/entypo/
+backUrls.json
+
+canographia
+industries
+mazagran
+opendata_alimentaire
