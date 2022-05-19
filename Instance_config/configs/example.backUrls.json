@@ -1,5 +1,5 @@
 [
-    {"name": "InstanceName", "url": "https://urlofinstance.org"},
-    {"name": "InstanceName", "url": "https://urlofinstance.org"}
+    {"name": "InstanceName", "token": "token", "url": "https://urlofinstance.org"},
+    {"name": "InstanceName", "token": "token", "url": "https://urlofinstance.org"}
 
 ]

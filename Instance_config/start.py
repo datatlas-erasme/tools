@@ -17,9 +17,9 @@ def getkeplerJson(instance_name) :
     
 
 # make an api call to the server to push the conf using {instanceurl}/api/conf/kepler/ and post in body the kepler.json
-def pushConf(url, keplerJson, instanceJson) :
+def pushConf(url,token, keplerJson, instanceJson) :
 
-    headers = {}
+    headers = {'Authorization': 'Bearer ' + token}
     files = []
 
     # push kepler conf to the server
@@ -78,7 +78,7 @@ print("are you sure you want to push the conf ", sub_folders[int(instance_name)]
 startPush = input()
 if startPush == "y":
     print("pushing conf to server")
-    pushConf(backUrls[int(server_number)]["url"], keplerJson, instanceJson)
+    pushConf(backUrls[int(server_number)]["url"],backUrls[int(server_number)]["token"], keplerJson, instanceJson)
 else :
     print("exiting")
     exit()
