@@ -6,13 +6,13 @@ import time
 
 # open the instance.json  file based on the instance name
 def getInstanceJson(instance_name) :
-    with open(os.path.join(ConfigsPath + sub_folders[int(instance_name)] + '/instance.json')) as f:
+    with open(os.path.join(ConfigsPath + sub_folders[int(instance_name)] + '/instance.json'), encoding="utf-8") as f:
         instance_json = f.read()
         return instance_json
     
 # open the kepler.json file based on the instance name
 def getkeplerJson(instance_name) :
-    with open(os.path.join(ConfigsPath + sub_folders[int(instance_name)] + '/kepler.json')) as f:
+    with open(os.path.join(ConfigsPath + sub_folders[int(instance_name)] + '/kepler.json'), encoding="utf-8") as f:
         kepler_json = f.read()
         return kepler_json
     
@@ -22,7 +22,7 @@ def pushConf(url,token, keplerJson, instanceJson) :
 
     headers = {'Authorization': 'Bearer ' + token}
     files = []
-
+    
     # push kepler conf to the server
     setkeplerRoute = url + '/api/conf/kepler/'
     print(setkeplerRoute)
