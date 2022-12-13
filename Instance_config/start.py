@@ -1,6 +1,7 @@
 import os
 import json
 import requests
+import time
 
 
 # open the instance.json  file based on the instance name
@@ -29,7 +30,7 @@ def pushConf(url,token, keplerJson, instanceJson) :
     keplerData={'configuration_kepler': keplerJson}
     response = requests.request("POST",setkeplerRoute, headers=headers, data=keplerData, files=files, )
     print(response.text)
-
+    time.sleep(3)
     # push instance conf to the server
     setInstanceRoute = url + '/api/conf/instance/'
     print(setInstanceRoute)
